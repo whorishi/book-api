@@ -21,11 +21,11 @@ func TestIntegration(t *testing.T) {
 	}{
 		{"get books",http.MethodGet,"books",http.StatusOK,nil},
 		{"post books",http.MethodPost,"books",http.StatusCreated,[]byte(`{
-				"title":"Bad Before Good",
-				"author":"Anish Dey",
-				"publisher":"Global Printers"
-				"price":1400
-				"category":"Biography"
+				"title": "hiiiiii",
+				"author": "hellllo",
+				"publisher": "holla",
+				"price": 123,
+				"category": "sayonara"
 		}`),
 	}}
 
@@ -38,11 +38,14 @@ func TestIntegration(t *testing.T) {
 			t.Errorf("TEST[%v] Failed.\tHTTP request encountered Err: %v\n%s", i, err, tc.desc)
 			continue
 		}
-
+		
 		if resp.StatusCode!=tc.statusCode {
 			t.Errorf("TEST[%v] Failed.\tExpected %v\tGot %v\n%s", i, tc.statusCode, resp.StatusCode, tc.desc)
 		}
 
 		_ = resp.Body.Close()
 	}
+
 }
+
+
