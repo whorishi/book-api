@@ -9,3 +9,13 @@ This a book rest api for a book store which stores the data of the books present
 Sequence Diagram for this Book API:
 
 ![sequence Diagram](https://github.com/whorishi/book-api/assets/76156125/ec3963f6-efff-480b-89ef-5f3abcb77d4e)
+
+
+To initiate docker use these commands:
+
+> docker run --name sample-mysql -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=test_database -p 3307:3306 -d mysql:8.0.30
+
+> docker exec -it sample-mysql mysql -uroot -proot123 test_database -e "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, author VARCHAR(255), publisher VARCHAR(255), price INT, category VARCHAR(255));"
+
+
+
