@@ -23,7 +23,8 @@ To initiate docker use these commands:
 We have used the default port i.e 8000
 
 use 'http://localhost:8000/books' to access the GET and POST Query.
-use 'http://localhost:8000/books/{id}' to access the PUT and DELETE Query. // {} surrounding id should not be used
+
+use 'http://localhost:8000/books/{id}' to access the PUT and DELETE Query. // {} surrounding id should not be used.
 
 
 
