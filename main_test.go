@@ -27,8 +27,44 @@ func TestIntegration(t *testing.T) {
 				"publisher": "holla",
 				"price": 123,
 				"category": "sayonara"
-		}`),
-		}}
+		}`)},
+		{"post books", http.MethodPost, "books", http.StatusCreated, []byte(`{
+			"title": "a",
+			"author": "a",
+			"publisher": "a",
+			"price": 4546468,
+			"category": "a"
+		}`)},
+		{"post books", http.MethodPost, "books", http.StatusCreated, []byte(`{
+			"title": "b",
+			"author": "b",
+			"publisher": "b",
+			"price": 1385434,
+			"category": "b"
+		}`)},
+		{"post books", http.MethodPost, "books", http.StatusCreated, []byte(`{
+			"title": "c",
+			"author": "c",
+			"publisher": "c",
+			"price": 233,
+			"category": "c"
+		}`)},
+		{"post books", http.MethodPost, "books", http.StatusCreated, []byte(`{
+			"title": "d",
+			"author": "d",
+			"publisher": "d",
+			"price": 1233,
+			"category": "d"
+		}`)},
+		{"post books", http.MethodPost, "books", http.StatusCreated, []byte(`{
+			"title": "e",
+			"author": "e",
+			"publisher": "e",
+			"price": 987,
+			"category": "e"
+		}`)},
+		{"get books", http.MethodGet, "books", http.StatusOK, nil},
+	}
 
 	for i, tc := range tests {
 		req, _ := request.NewMock(tc.method, "http://localhost:8000/"+tc.endpoint, bytes.NewBuffer(tc.body))
