@@ -12,6 +12,7 @@ Sequence Diagram for this Book API:
 
 
 To initiate docker use these commands:
+> docker pull mysql
 
 > docker run --name sample-mysql -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=test_database -p 3307:3306 -d mysql:8.0.30
 
