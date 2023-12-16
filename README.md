@@ -16,7 +16,14 @@ To initiate docker use these commands:
 
 > docker run --name sample-mysql -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=test_database -p 3307:3306 -d mysql:8.0.30
 
-> docker exec -it sample-mysql mysql -uroot -proot123 test_database -e "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, author VARCHAR(255), publisher VARCHAR(255), price INT, category VARCHAR(255));"
+> docker exec -it sample-mysql mysql -uroot -proot123 test_database -e "CREATE TABLE books (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, author VARCHAR(255), publisher VARCHAR(255), price INT, category VARCHAR(255));"
+
+
+
+We have used the default port i.e 8000
+
+use 'http://localhost:8000/books' to access the GET and POST Query.
+use 'http://localhost:8000/books/{id}' to access the PUT and DELETE Query. // {} surrounding id should not be used
 
 
 
