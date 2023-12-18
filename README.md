@@ -18,6 +18,16 @@ To initiate docker use these commands:
 
 > docker exec -it sample-mysql mysql -uroot -proot123 test_database -e "CREATE TABLE books (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, author VARCHAR(255), publisher VARCHAR(255), price INT, category VARCHAR(255));"
 
+To Check database use
+
+> docker exec -it sample-mysql bash
+
+> mysql -uroot -p
+
+Now Enter Password i.e root123 and change database to test_database.
+
+Now you can perform sql quesries on database 
+
 
 
 We have used the default port i.e 8000
