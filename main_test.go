@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"net/http"
 	"testing"
 	"time"
@@ -12,6 +13,8 @@ import (
 func TestIntegration(t *testing.T) {
 	go main()
 	time.Sleep(3 * time.Second)
+	
+	accuracy_count := 0
 
 	tests := []struct {
 		desc       string
@@ -78,9 +81,14 @@ func TestIntegration(t *testing.T) {
 
 		if resp.StatusCode != tc.statusCode {
 			t.Errorf("TEST[%v] Failed.\tExpected %v\tGot %v\n%s", i, tc.statusCode, resp.StatusCode, tc.desc)
+		}else{
+			accuracy_count++
+			fmt.Printf("Passes Test[%v]",i)
 		}
 
 		_ = resp.Body.Close()
 	}
+
+	fmt.Printf("Test Result : %v", accuracy_count/8);
 
 }
